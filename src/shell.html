@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>小手机 · PhoneShell</title>
+<style>
+/*__CORE_CSS__*/
+</style>
+</head>
+<body>
+
+<div id="phone">
+  <div id="screen">
+
+    <!-- 桌面壁纸（默认「纯色」模式，可在设置里切换到渐变壁纸） -->
+    <div id="wallpaper"></div>
+
+    <!-- 状态栏 -->
+    <div id="statusbar">
+      <span id="sb-time">--:--</span>
+      <span class="sb-right">
+        <span class="sb-bar"><i></i><i></i><i></i><i></i></span>
+        <span>5G</span>
+        <span class="sb-bat"><i></i></span>
+      </span>
+    </div>
+
+    <!-- 主屏（横向分页） -->
+    <main id="home">
+      <div id="pages">
+        <section class="page" data-page="0">
+          <div class="home-title">
+            <h1>我的手机</h1>
+            <span class="ht-sub" id="home-count"></span>
+          </div>
+          <div class="app-grid" data-grid></div>
+        </section>
+        <section class="page" data-page="1">
+          <div class="home-title"><h1>第二页</h1><span class="ht-sub">长按图标可拖动</span></div>
+          <div class="app-grid" data-grid></div>
+        </section>
+        <section class="page" data-page="2">
+          <div class="home-title"><h1>第三页</h1><span class="ht-sub">长按图标可拖动</span></div>
+          <div class="app-grid" data-grid></div>
+        </section>
+      </div>
+      <div id="page-dots"></div>
+      <nav id="dock"></nav>
+    </main>
+
+    <!-- 文件夹浮层 -->
+    <div class="folder-pop" id="folder-pop">
+      <input class="fp-name" id="fp-name" maxlength="12" placeholder="文件夹名称">
+      <div class="fp-grid" id="fp-grid"></div>
+      <div class="fp-row">
+        <button class="fp-btn" id="fp-edit" type="button">整理</button>
+        <button class="fp-btn warn" id="fp-del" type="button">删除文件夹</button>
+        <button class="fp-btn primary" id="fp-close" type="button">完成</button>
+      </div>
+    </div>
+
+    <!-- 应用层 -->
+    <div id="apps"></div>
+
+    <!-- 最近任务 -->
+    <div id="recents">
+      <h2>最近任务</h2>
+      <div class="rec-list" id="rec-list"></div>
+      <button class="rec-close" id="rec-close" type="button">返回桌面</button>
+    </div>
+
+    <!-- 锁屏 -->
+    <div id="lock">
+      <div class="lock-time" id="lock-time">--:--</div>
+      <div class="lock-date" id="lock-date"></div>
+      <div class="lock-hint">轻触屏幕解锁</div>
+      <div class="lock-logo">PHONESHELL</div>
+    </div>
+
+    <!-- 息屏屏保 + 近期知识卡（闲置一段时间后自动出现） -->
+    <div id="screensaver">
+      <div class="ss-stage">
+        <div class="ss-clock" id="ss-time">--:--</div>
+        <div class="ss-date" id="ss-date"></div>
+        <div class="ss-card">
+          <div class="ss-card-head">
+            <span class="ss-cat" id="ss-cat">知识卡</span>
+            <span class="ss-head-right">
+              <span class="ss-idx" id="ss-idx"></span>
+              <button class="ss-more ss-ctl" id="ss-more" type="button">展开全文</button>
+            </span>
+          </div>
+          <h3 class="ss-title" id="ss-title">还没有知识卡</h3>
+          <p class="ss-summary" id="ss-summary"></p>
+          <div class="ss-src" id="ss-src"></div>
+        </div>
+        <div class="ss-nav ss-ctl">
+          <button class="ss-btn" id="ss-prev" type="button" title="上一张">‹</button>
+          <span class="ss-progress" id="ss-progress"></span>
+          <button class="ss-btn" id="ss-next" type="button" title="下一张">›</button>
+        </div>
+        <div class="ss-actions ss-ctl">
+          <button class="ss-btn" id="ss-regen" type="button">读完才会生成下一组</button>
+          <button class="ss-btn" id="ss-setup" type="button">接口设置</button>
+          <button class="ss-btn" id="ss-close" type="button">返回（Esc）</button>
+        </div>
+        <div class="ss-hint">按键盘任意键退出息屏 · 鼠标移动不会退出</div>
+      </div>
+    </div>
+
+    <!-- 吐司 / 弹窗 -->
+    <div id="toast-layer"></div>
+    <div id="modal-layer"></div>
+  </div>
+</div>
+
+<!-- 启动失败兜底提示 -->
+<div id="boot-error">
+  <div class="be">
+    <h2>启动失败</h2>
+    <p>错误信息：<code id="boot-error-msg"></code></p>
+    <p>请确认使用较新的 <b>Chrome / Edge</b> 浏览器打开本文件（双击即可），并允许页面使用本地存储。</p>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   内置应用与游戏（纯代码生成美术素材，无任何外部资源）
+   ============================================================ */
+window.PHONE_BUILTIN_APPS = [];
+</script>
+
+<script>
+/*__CORE_JS__*/
+</script>
+
+<!--__APP_SCRIPTS__-->
+
+</body>
+</html>
